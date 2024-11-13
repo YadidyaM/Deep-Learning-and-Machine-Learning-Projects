@@ -31,22 +31,6 @@ The project aims to:
 
 ---
 
-## Model Architecture
-
-The system uses a character-level Recurrent Neural Network (Char-RNN), inspired by [Andrej Karpathy’s approach](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) to RNN-based text generation. Key parameters include:
-
-- **Model Type**: Supports `lstm`, `rnn`, or `gru`, with `lstm` typically performing best.
-- **Parameters**:
-  - `batch_size`: Number of sequences per mini-batch.
-  - `sequence_length`: Number of characters per sequence.
-  - `n_cells`: Number of units in each LSTM layer.
-  - `n_layers`: Number of LSTM layers.
-  - `ckpt_name`: Checkpoint file name for saving model weights.
-  - `learning_rate`: Typically set to 0.001 or lower for gradual learning.
-
-### Why Char-RNN?
-Character-level RNNs break down text into individual characters, allowing the model to learn sequences at the character level. This is effective for handling structured text formats, such as ABC notation for music and stylized lyric patterns.
-
 ## ABC Music Format
 
 ABC notation is a compact, text-based format for transcribing music. It uses symbols and single-letter fields to represent music data, including metadata and melody. Here's an example tune:
