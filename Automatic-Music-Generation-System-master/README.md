@@ -1,6 +1,3 @@
-Here’s the README file reformatted for `README.md`:
-
-```markdown
 # Automatic Music Generation System
 
 This project uses deep learning to generate original Irish folk tunes and Bob Dylan-inspired lyrics. Leveraging Long Short-Term Memory (LSTM) networks—a type of Recurrent Neural Network (RNN)—the system captures stylistic elements unique to both Irish folk music and Bob Dylan's lyrical style.
@@ -21,18 +18,16 @@ The project aims to:
 1. **Generate Irish Folk Tunes**: Compose new tunes that follow traditional Irish folk music structure.
 2. **Generate Bob Dylan-Style Lyrics**: Emulate the lyrical tone and structure characteristic of Bob Dylan’s songwriting.
 
----
 
 ## Datasets
-
-- **Irish Folk Music**: Datasets in ABC notation format compiled from:
+**Irish Folk Music**: Datasets in ABC notation format compiled from:
   - [O'Neill's Irish Music Collection](http://trillian.mit.edu/~jc/music/book/oneills/1850/X/)
   - [Cobb’s Tunebook](http://cobb.ece.wisc.edu/irish/Tunebook.html)
   - [Nottingham Music Database](http://abc.sourceforge.net/NMD/)
 
   These were scraped, cleaned, and merged into a single file to create a robust corpus for model training.
 
-- **Bob Dylan Lyrics**: Lyrics were scraped from [Bob Dylan’s official website](http://bobdylan.com/songs/). This text corpus (~700KB) provides a small yet rich dataset suitable for training an RNN to generate Dylan-style lyrics. **Note:** Due to copyright reasons, the dataset is not included in this repository.
+**Bob Dylan Lyrics**: Lyrics were scraped from [Bob Dylan’s official website](http://bobdylan.com/songs/). This text corpus (~700KB) provides a small yet rich dataset suitable for training an RNN to generate Dylan-style lyrics. **Note:** Due to copyright reasons, the dataset is not included in this repository.
 
 ---
 
@@ -51,8 +46,6 @@ The system uses a character-level Recurrent Neural Network (Char-RNN), inspired 
 
 ### Why Char-RNN?
 Character-level RNNs break down text into individual characters, allowing the model to learn sequences at the character level. This is effective for handling structured text formats, such as ABC notation for music and stylized lyric patterns.
-
----
 
 ## ABC Music Format
 
@@ -77,44 +70,3 @@ A|dcAG F2DF|E2CE F2DF|dcAG F2DF|Add^c defe|!
   - `K`: Key signature
 
 Generated ABC files can be converted to MIDI, WAV, or OGG formats for playback.
-
----
-
-## Implementation Resources
-
-This project builds upon several resources for deep learning and music generation:
-- **RNN-based Music Generation**: [Folk Music Generation by Bob Sturm](https://highnoongmt.wordpress.com/2015/05/22/lisls-stis-recurrent-neural-networks-for-folk-music-generation/)
-- **WaveNet by DeepMind**: A convolutional music generation model: [Keras WaveNet GitHub Repository](https://github.com/basveeling/wavenet/)
-
----
-
-## Running the Project
-
-1. **Set Up the Environment**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Dataset Preparation**:
-   Ensure the Irish folk and Bob Dylan datasets are available and pre-processed.
-
-3. **Train the Model**:
-   - Configure model parameters in the code.
-   - Run the training script:
-     ```bash
-     python train_model.py --dataset "path/to/dataset" --model_type "lstm" --batch_size 64 --sequence_length 100 --n_cells 256 --n_layers 2 --ckpt_name "music_gen_checkpoint" --learning_rate 0.001
-     ```
-
-4. **Generate Music or Lyrics**:
-   After training, use the model to generate new tunes or lyrics by running:
-   ```bash
-   python generate_text.py --ckpt_name "music_gen_checkpoint" --output_length 500
-   ```
-
-5. **Convert ABC to MIDI/WAV** (Optional):
-   Use ABC notation software or converters to transform generated ABC notation to MIDI or WAV.
-
----
-
-Enjoy generating music and lyrics!
-```
